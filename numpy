@@ -32,3 +32,14 @@ print("last element:",arr[-1])
 # adavnce index
 indices=np.array([0,2,4])
 print("element at indices 0,2, and 4:",arr[indices])
+
+#basic operation addition
+arr2=np.array([6,7,8,9,10])
+print("array 1:",arr)
+print("array 2:",arr2)
+print("sum:",arr+arr2)
+
+# subract multiplay division
+print("sub:",arr-arr2)
+print("mul:",arr*arr2)
+print("div:",arr/arr2)
