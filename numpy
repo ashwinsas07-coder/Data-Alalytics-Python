@@ -19,6 +19,13 @@ arr3=np.array([[1,2,3],[4,5,6],[7,8,9]])
 print("\n3D array:")
 print(arr3)
 
+#update array
+arr[0]=10
+print("update array:",arr)
+
+#slicing
+print("sliced array:",arr[1:4])
+
 # index
 print("first element:",arr[0])
 print("last element:",arr[-1])
