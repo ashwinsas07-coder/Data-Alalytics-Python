@@ -1,1 +1,14 @@
+import pandas as pd 
+data = { 
+    "Name": ["alice", "Bala", "Charile", "david", "emily"], 
+    'Age': [25, 30, 35, 40, 45],
+    'gender': ['F', 'M', 'M', 'M', 'F'],
+    'salary': [50000, 60000, 70000, 80000, 90000] 
+} 
+df = pd.DataFrame(data) 
 
+data      #create a dataframe
+
+print(df[df["Age"] > 23]) # filtering data based on condition
+
+print(df.sort_values(by="salary", ascending=False)) #sorting 
