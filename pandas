@@ -12,3 +12,10 @@ data      #create a dataframe
 print(df[df["Age"] > 23]) # filtering data based on condition
 
 print(df.sort_values(by="salary", ascending=False)) #sorting 
+
+avg_salary = df.groupby('job_title')['salary_in_usd'].mean() //highest average salary
+highest_avg_job = avg_salary.idxmax()
+highest_avg_salary = avg_salary.max()
+
+print("Department (Job Title) with highest average salary:", highest_avg_job)
+print("Highest average salary (in USD):", highest_avg_salary)
