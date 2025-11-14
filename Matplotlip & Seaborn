@@ -1,0 +1,61 @@
+#packages
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib as plt
+
+#top 5 row show
+data.head()
+
+#bottom 5 row show
+data.tail()
+
+#data information
+data.info()
+
+data.shape // who may column row show in number
+
+#distribution app rating:
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(10,6))
+sns.histplot(data['Rating'].dropna(),kde=True,bins=20,color='skyblue')
+plt.title('Distribution of App Ratings')
+plt.xlabel('Rating')
+plt.ylabel('Frequency')
+plt.show()
+
+data['Rating']=np.log1p(data['Rating'])// log method
+
+#IQR method using
+from numpy._core.defchararray import lower
+Q1=data['Rating'].quantile(0.25)
+Q3=data['Rating'].quantile(0.75)
+IQR=Q3-Q1
+lower_bound=Q1-1.5*IQR
+upper_bound=Q3+1.5*IQR
+
+filterdata=data[(data['Rating']>=lower_bound) & (data['Rating']<=upper_bound)]
+
+plt.figure(figsize=(10,6))
+sns.boxplot(x='Rating',data=filterdata,color='lightgreen')
+plt.title('boxplot of App Ratings')
+plt.xlabel('Rating')
+plt.show()
+
+#countplot
+plt.figure(figsize=(10,6))
+sns.countplot(y='Category',data=data,palette='viridis')
+plt.title('Category Distribution')
+plt.xlabel('Count')
+plt.ylabel('Category')
+
+#countplot find how many people intall saw
+plt.figure(figsize=(10,6))
+sns.countplot(y='Category',data=data,order=data['Category'].value_counts().index,palette='pastel')
+plt.title('Category Distribution')
+plt.xlabel('Count')
+plt.ylabel('Category')
+plt.show()
+plt.show()
