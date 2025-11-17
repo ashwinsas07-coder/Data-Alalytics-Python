@@ -59,3 +59,17 @@ plt.xlabel('Count')
 plt.ylabel('Category')
 plt.show()
 plt.show()
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+# Load the dataset
+df = pd.read_csv('/Google_data.csv')
+# Count the number of apps in each Category
+counts = df['Category'].value_counts()
+# Create the pie chart
+plt.figure(figsize=(8, 8))
+plt.pie(counts, labels=counts.index, autopct='%1.1f%%')
+plt.title("Category Distribution")
+# Show the chart
+plt.show()
